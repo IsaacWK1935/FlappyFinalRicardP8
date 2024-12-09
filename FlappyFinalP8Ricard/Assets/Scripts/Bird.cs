@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -7,13 +8,14 @@ public class Bird : MonoBehaviour
     public float upForce = 200.0f;
 
     private bool isDead = false;
-    private Rigidbody rb2d;
+    private Rigidbody2D rb2d;
     private Animator anim;
+    public TextMeshProUGUI Score;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody>();
+        rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
@@ -35,6 +37,7 @@ public class Bird : MonoBehaviour
     {
         isDead = true;
         anim.SetTrigger("Die");
+        GameController.instance.BirdDied();
     }
 }
 
