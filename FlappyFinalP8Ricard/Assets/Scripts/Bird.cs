@@ -17,7 +17,7 @@ public class Bird : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-    }
+}
 
     // Update is called once per frame
     void Update()
@@ -35,6 +35,7 @@ public class Bird : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
+        rb2d.velocity = Vector2.zero;
         isDead = true;
         anim.SetTrigger("Die");
         GameController.instance.BirdDied();
