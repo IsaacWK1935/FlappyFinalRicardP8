@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,11 +10,12 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public GameObject gameOverText;
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
 
     private int score = 0;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -44,7 +46,7 @@ public class GameController : MonoBehaviour
             return;
         }
         score++;
-        scoreText.text = "Score: " + score.ToString ();
+        scoreText.text = "Score: " + score.ToString();
     }
 
     public void BirdDied()

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -10,7 +9,6 @@ public class Bird : MonoBehaviour
     private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
-    public TextMeshProUGUI Score;
 
     // Start is called before the first frame update
     void Start()
